@@ -12,17 +12,15 @@ import javax.swing.Timer;
 import javax.swing.JPanel;
 
 public class gameplay extends JPanel implements KeyListener,ActionListener {
-	private boolean play = false;
+    private boolean play = false;
     private int score = 0;
     
-    private int map[][]=new int[3][9];
+    private int map[][]=new int[3][8];
     
-    private int totalBricks = 21;
+    private int totalBricks = 24;
     
     private Timer timer;
     private int delay = 8;
-    
-   // private mapGenrator map2;
     
     private int playerX = 310;
     
@@ -33,11 +31,11 @@ public class gameplay extends JPanel implements KeyListener,ActionListener {
     private int count = 0;
     
     public gameplay()
-    {  // map2 = new mapGenrator();
+    {  
     	addKeyListener(this);
     	setFocusable(true);
     	setFocusTraversalKeysEnabled(false);
-    	mapping(3,9);
+    	mapping(3,8);
     	timer=new Timer(delay,this);
     	timer.start();
     }
@@ -78,9 +76,6 @@ public class gameplay extends JPanel implements KeyListener,ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{	
-	//	mapgenrator map = new mapgenrator();
-		//motion of ball
-		
 		timer.start();
 		if(play==true)
 		{
@@ -112,7 +107,6 @@ public class gameplay extends JPanel implements KeyListener,ActionListener {
 		collision();
 		repaint();
 		}
-		//if()
 	}
 	
 	@Override
